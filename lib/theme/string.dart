@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+//images
+String background = 'assets/images/bg.png';
+String logo = 'assets/images/logo.png';
+String registerBackground = 'assets/images/register_bg.png';
+String loginBackground = 'assets/images/login_bg.png';
+
+//font
+String poppins = 'Poppins';
+String poppinsRegular = 'Poppins-Regular.ttf';
+String poppinsSemiBold = 'Poppins-SemiBold.ttf';
+String poppinsMedium = 'Poppins-Medium.ttf';
+
+//intro screen
+String register = 'Register';
+String login = 'Login';
+String welcome = 'Welcome';
+String singIn = 'Sign in to continue';
+String email = 'Email';
+String password = 'Password';
+String forgotPassword = 'Forgot password?';
+String donHaveAccount = 'Don\'t have an account?';
+String registerHere = 'Register here.';
