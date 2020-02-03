@@ -1,4 +1,5 @@
 import 'package:cohort_app/screen/login_screen.dart';
+import 'package:cohort_app/screen/register_screen.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class IntroScreen extends StatelessWidget {
               children: <Widget>[
                 GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => LoginScreen())),
+                      MaterialPageRoute(builder: (_) => RegisterScreen())),
                   child: Container(
                     padding: EdgeInsets.all(10.0),
                     alignment: Alignment.center,
@@ -40,22 +41,27 @@ class IntroScreen extends StatelessWidget {
                     child: Text(
                       register,
                       style:
-                          Theme.of(context).textTheme.body1.apply(color: white),
+                          Theme.of(context).textTheme.body2.apply(color: white),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0), color: white),
-                  child: Text(
-                    login,
-                    style:
-                        Theme.of(context).textTheme.body1.apply(color: black),
+                GestureDetector(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => LoginScreen())),
+                  child: Container(
+                    padding: EdgeInsets.all(10.0),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: white),
+                    child: Text(
+                      login,
+                      style:
+                          Theme.of(context).textTheme.body2.apply(color: black),
+                    ),
                   ),
                 ),
               ],

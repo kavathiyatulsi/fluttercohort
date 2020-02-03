@@ -22,7 +22,7 @@ class CommonButton extends StatelessWidget {
       width: width,
       height: 50.0,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          borderRadius: BorderRadius.all(Radius.circular(40.0)),
           gradient: gradient,
           boxShadow: [BoxShadow(color: Colors.grey[500], blurRadius: 1.5)]),
       child: Material(
