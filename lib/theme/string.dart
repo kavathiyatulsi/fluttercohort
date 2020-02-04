@@ -32,3 +32,5 @@ String loginHere = ' Login here.';
 String errorEmail = 'Please enter email address';
 String errorFullName = 'Please enter full name';
 String errorPassword = 'Please enter password';
+String errorPasswordLength = 'Password must be longer than 8 characters';
+String errorEmailFormat='Email format is invalid';

@@ -1,18 +1,28 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cohort_app/common/Toast.dart';
 import 'package:cohort_app/screen/login_screen.dart';
 import 'package:cohort_app/screen/register_screen.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
+import 'package:cohort_app/utils/auth.dart';
+import 'package:cohort_app/utils/validation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:toast/toast.dart';
 
 import 'raised_gradient_button.dart';
+
+enum FormType { login, register }
 
 class LoginView extends StatefulWidget {
   final String title;
   final String btnName;
   final bool isLogin;
   final String accountLabel;
+  final BaseAuth auth;
 
-  LoginView(this.btnName, this.title, this.isLogin, this.accountLabel);
+  LoginView(
+      this.btnName, this.title, this.isLogin, this.accountLabel, this.auth);
 
   @override
   _LoginViewState createState() => _LoginViewState();
@@ -24,22 +34,27 @@ class _LoginViewState extends State<LoginView> {
   @override
   void initState() {
     super.initState();
-    // _passwordVisible = false;
+    _passwordVisible = true;
   }
 
   var _formKey = GlobalKey<FormState>();
+  FormType _formType;
+  String _email;
+  String _password;
+  String _name;
 
   @override
   Widget build(BuildContext context) {
+    widget.isLogin ? _formType = FormType.login : _formType = FormType.register;
     return Form(
       key: _formKey,
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.0),
-                topRight: Radius.circular(20.0))),
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            )),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
           child: Column(
@@ -65,14 +80,8 @@ class _LoginViewState extends State<LoginView> {
                           return errorFullName;
                         }
                       },
-                      decoration: new InputDecoration(
-                          enabledBorder: inputBorder(),
-                          hintText: fullName,
-                          fillColor: black,
-                          hintStyle: Theme.of(context)
-                              .textTheme
-                              .display1
-                              .apply(color: black)))
+                      decoration: inPutDecoration(fullName),
+                      onSaved: (value) => _name = value)
                   : sizeBox(0.0),
               !widget.isLogin ? sizeBox(10.0) : sizeBox(0.0),
               TextFormField(
@@ -80,43 +89,39 @@ class _LoginViewState extends State<LoginView> {
                 validator: (String value) {
                   if (value.isEmpty) {
                     return errorEmail;
+                  } else if (emailValidator(value)) {
+                    return errorEmailFormat;
                   }
                 },
-                decoration: new InputDecoration(
-                    enabledBorder: inputBorder(),
-                    hintText: email,
-                    fillColor: black,
-                    hintStyle: Theme.of(context)
-                        .textTheme
-                        .display1
-                        .apply(color: black)),
+                onSaved: (value) => _email = value,
+                decoration: inPutDecoration(email),
               ),
               sizeBox(10.0),
               TextFormField(
-                obscureText: true,
+                obscureText: _passwordVisible,
                 keyboardType: TextInputType.text,
                 validator: (value) {
                   if (value.isEmpty) {
                     return errorPassword;
+                  } else if (value.length < 8) {
+                    return errorPasswordLength;
                   }
                 },
+                onSaved: (value) => _password = value,
                 decoration: new InputDecoration(
                     enabledBorder: inputBorder(),
                     hintText: password,
                     fillColor: black,
                     suffixIcon: GestureDetector(
-                      onLongPress: () {
+                      onTap: () {
                         setState(() {
-                          _passwordVisible = true;
-                        });
-                      },
-                      onLongPressUp: () {
-                        setState(() {
-                          _passwordVisible = false;
+                          _passwordVisible = !_passwordVisible;
                         });
                       },
                       child: Icon(
-                        Icons.visibility,
+                        _passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                         color: blue,
                       ),
                     ),
@@ -146,12 +151,10 @@ class _LoginViewState extends State<LoginView> {
                 gradient:
                     LinearGradient(colors: <Color>[blue, blue, lightBlue]),
                 onPressed: () {
-                  setState(() {
-                    if (_formKey.currentState.validate()) {}
-                  });
+                  var user = validAndSubMit();
                 },
               ),
-              Align(
+              Container(
                 alignment: Alignment.bottomCenter,
                 child: createAccountLabel(),
               )
@@ -166,6 +169,72 @@ class _LoginViewState extends State<LoginView> {
     return SizedBox(
       height: size,
     );
+  }
+
+  Future<String> signUp() async {
+    AuthResult result = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: _email, password: _password);
+    FirebaseUser user = result.user;
+    return user.uid;
+  }
+
+  void validAndSubMit() async {
+    if (validAndSave()) {
+      if (_formType == FormType.login) {
+        FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: _email, password: _password)
+            .then((currentUser) => Firestore.instance
+                .collection("users")
+                .document()
+                .setData({
+                  "uid": currentUser.user.uid,
+                  "fname": _name,
+                  "email": _email,
+                })
+                .then((result) => {
+                      showToast(context, 'Login successfully '),
+                      debugPrint(
+                          'Login :-${currentUser.user.getIdToken(refresh: true)}')
+                    })
+                .catchError((err) => print(err)))
+            .catchError((err) => print(err));
+      } else {
+        FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: _email, password: _password)
+            .then((currentUser) => Firestore.instance
+                .collection("users")
+                .document()
+                .setData({
+                  "uid": currentUser.user.uid,
+                  "fname": _name,
+                  "email": _email,
+                })
+                .then((result) => {
+                      showToast(context, 'Register successfully '),
+                      debugPrint('Register:-')
+                    })
+                .catchError((err) => print(err)))
+            .catchError((err) => print(err));
+      }
+    }
+  }
+
+  bool validAndSave() {
+    final form = _formKey.currentState;
+    if (form.validate()) {
+      form.save();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  inPutDecoration(String types) {
+    return InputDecoration(
+        enabledBorder: inputBorder(),
+        hintText: types,
+        fillColor: black,
+        hintStyle: Theme.of(context).textTheme.display1.apply(color: black));
   }
 
   inputBorder() {

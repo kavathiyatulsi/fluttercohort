@@ -1,3 +1,4 @@
+import 'package:cohort_app/screen/login_screen.dart';
 import 'package:cohort_app/screen/splash_screen.dart';
 import 'package:cohort_app/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: themeData,
-      home: SplashScreen(),
+      home: LoginScreen(),
     );
   }
 }
