@@ -8,6 +8,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Stack(
         alignment: Alignment.center,
         children: <Widget>[
@@ -21,7 +22,9 @@ class RegisterScreen extends StatelessWidget {
               top: 200.0,
               left: 0.0,
               right: 0.0,
-              child: LoginView(register, singUp, false, alreadyAccount,new Auth())),
+              bottom: 0.0,
+              child: LoginView(
+                  register, singUp, false, alreadyAccount, new Auth())),
         ],
       ),
     );
