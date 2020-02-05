@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cohort_app/screen/login/login_view.dart';
+import 'package:cohort_app/theme/string.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cohort_app/screen/login/LoginValidators.dart';
@@ -34,13 +35,6 @@ class Blocs extends Object with Validators implements BaseBloc {
 
   Function(String) get changePassword => _password.sink.add;
 
-  submit() {
-    final validEmail = _email.value;
-    final validPassword = _password.stream;
-
-    print('===>$validEmail and $validPassword');
-  }
-
   dispose() {
     _email.close();
     _password.close();
@@ -49,34 +43,33 @@ class Blocs extends Object with Validators implements BaseBloc {
 
   validAndSubMitOf(FormType _formType, String email, String password,
       String name, BuildContext context) async {
+    showLoading(context);
     if (_formType == FormType.login) {
       //Login
       try {
-        showLoading(context);
         FirebaseAuth.instance
             .signInWithEmailAndPassword(email: email, password: password)
             .then((onValue) {
           showToast(context, 'Login successfully ');
           debugPrint('Login :-${onValue.user.email}');
-          hideLoading(context);
+          Navigator.pop(context);
           Navigator.of(context)
               .pushReplacement(MaterialPageRoute(builder: (_) => HomeScreen()));
         }).catchError((onError) {
           switch (onError) {
             case "ERROR_WRONG_PASSWORD":
               {
-                showToast(context, "Password doesn\'t match your email.");
+                showToast(context, errorPasswordDoesNotMatch);
               }
               break;
             case 'ERROR_TOO_MANY_REQUESTS':
               {
-                showToast(context, "Please try again later");
+                showToast(context, errorPleaseTryAgain);
               }
               break;
             case 'ERROR_USER_NOT_FOUND':
               {
-                showToast(context,
-                    "There is no user with such entries. Please try again.");
+                showToast(context, errorNoUserEntries);
               }
               break;
           }
@@ -94,22 +87,24 @@ class Blocs extends Object with Validators implements BaseBloc {
           Firestore.instance.collection('users').document().setData({
             "uid": currentUser.user.uid,
             'email': email,
-            'fname': "test"
+            'fname': name
           }).then((onValue) {
+            Navigator.pop(context);
+            showToast(context, toastLoginSuccess);
             Navigator.of(context).pushReplacement(
                 MaterialPageRoute(builder: (_) => HomeScreen()));
           });
         }).catchError((onError) {
+          Navigator.pop(context);
           switch (onError.code) {
             case "ERROR_EMAIL_ALREADY_IN_USE":
               {
-                showToast(context, "This email is already in use.");
+                showToast(context, errorEmailUse);
               }
               break;
             case "ERROR_WEAK_PASSWORD":
               {
-                showToast(
-                    context, "The password must be 6 characters long or more.");
+                showToast(context, errorPasswordMust);
               }
               break;
             default:
@@ -119,10 +114,8 @@ class Blocs extends Object with Validators implements BaseBloc {
       } catch (error) {}
     }
   }
-
-
-
 }
+
 showLoading(BuildContext context) async {
   showDialog(
       context: context,

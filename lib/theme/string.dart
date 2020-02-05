@@ -15,7 +15,7 @@ String register = 'Register';
 String login = 'Login';
 
 //Login ,register screen
-String welcome = 'Welcome';
+String welcome = 'Welcome!';
 String singIn = 'Sign in to continue';
 String singUp = 'We\'re here for dreams';
 String email = 'Email';
@@ -28,9 +28,20 @@ String registerHere = ' Register here.';
 String loginHere = ' Login here.';
 
 //error message
-
 String errorEmail = 'Please enter email address';
 String errorFullName = 'Please enter full name';
 String errorPassword = 'Please enter password';
 String errorPasswordLength = 'Password must be longer than 8 characters';
-String errorEmailFormat='Enter a valid email';
+String errorEmailFormat = 'Enter a valid email';
+String errorEmailUse = 'This email is already in use.';
+String errorPasswordMust = 'The password must be 6 characters long or more."';
+String errorNoUserEntries = 'There is no user with such entries. Please try again."';
+String errorPleaseTryAgain = 'Please try again later';
+String errorPasswordDoesNotMatch = 'Password doesn\'t match your email.';
+
+//Success and toast  message
+String toastLoginSuccess = 'Register successfully';
+String toastRegisterSuccess = 'Login successfully';
+
+//Constant key
+String ERROR_EMAIL_ALREADY_IN_USE = "ERROR_EMAIL_ALREADY_IN_USE";

@@ -1,4 +1,3 @@
-import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/utils/auth.dart';
 import 'package:cohort_app/screen/login/login_view.dart';

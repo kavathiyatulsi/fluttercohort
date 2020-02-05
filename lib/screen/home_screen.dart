@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Center(
           child: Text(
             'Home',
-            style: Theme.of(context).textTheme.body1.apply(color: white),
+            style: Theme.of(context).textTheme.body2.apply(color: white),
           ),
         ),
       ),

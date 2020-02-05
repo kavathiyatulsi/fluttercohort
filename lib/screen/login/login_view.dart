@@ -1,5 +1,5 @@
 import 'package:cohort_app/screen/login/LoginBloc.dart';
-import 'package:cohort_app/screen/register_screen.dart';
+import 'package:cohort_app/screen/register/register_screen.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/utils/auth.dart';
@@ -89,8 +89,6 @@ class _LoginViewState extends State<LoginView> {
                     sizeBox(18.0),
                     fieldPassword(),
                     sizeBox(20.0),
-
-
                     forgotPasswordText(),
                     sizeBox(25.0),
                     loginButton()

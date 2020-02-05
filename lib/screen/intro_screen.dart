@@ -1,4 +1,4 @@
-import 'package:cohort_app/screen/register_screen.dart';
+import 'package:cohort_app/screen/register/register_screen.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:flutter/material.dart';
