@@ -9,7 +9,7 @@ ThemeData themeData = ThemeData(
     fontFamily: poppins,
     textTheme: TextTheme(
         body1: TextStyle(
-            fontSize: 24.0,
+            fontSize: 20.0,
             color: white,
             fontFamily: poppinsSemiBold,
             fontWeight: FontWeight.w600),
@@ -34,5 +34,9 @@ ThemeData themeData = ThemeData(
             fontFamily: poppinsMedium,
             fontWeight: FontWeight.w600)));
 
-TextStyle textSize10= TextStyle(fontSize: 10.0,color: white,fontFamily: poppinsMedium);
-
+TextStyle textSize10 =
+    TextStyle(fontSize: 10.0, color: white, fontFamily: poppinsMedium);
+TextStyle profileTextSmall =
+    TextStyle(fontSize: 9.0, color: gray, fontFamily: poppinsRegular);
+TextStyle profileTextBig =
+    TextStyle(fontSize: 14.0, color: black, fontFamily: poppinsMedium);

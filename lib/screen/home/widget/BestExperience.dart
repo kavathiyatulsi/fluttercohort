@@ -1,7 +1,7 @@
 import 'package:cohort_app/common/SizeBoxView.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
-import 'package:cohort_app/widget/raised_gradient_button.dart';
+import 'package:cohort_app/widget/RaisedGradientButton.dart';
 import 'package:flutter/material.dart';
 
 import 'PackageView.dart';

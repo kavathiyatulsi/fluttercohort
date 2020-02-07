@@ -1,4 +1,5 @@
 import 'package:cohort_app/common/SizeBoxView.dart';
+import 'package:cohort_app/widget/Toolbar.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/theme/style.dart';
@@ -13,14 +14,7 @@ class _MyTripScreenState extends State<MyTripScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: white,
-        title: Text(
-          myTrips,
-          style: Theme.of(context).textTheme.body2.apply(color: black),
-        ),
-        elevation: 0.0,
-      ),
+      appBar: myAppBar(myTrips, context),
       body: SafeArea(
         child: myTripList(),
       ),

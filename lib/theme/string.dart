@@ -16,6 +16,17 @@ String brazil = 'assets/images/brazil.png';
 String hotel = 'assets/images/hotel.png';
 String iconArrowNext = 'assets/images/icon_arrow_next.png';
 String rowing = 'assets/images/rowing.png';
+String profile = 'assets/images/olivia.jpg';
+String iconPassword = 'assets/images/icon_password.png';
+String iconFavorites = 'assets/images/icon_favorites.png';
+String iconReviews = 'assets/images/icon_reviews.png';
+String iconOffers = 'assets/images/icon_offers.png';
+String iconLogout = 'assets/images/icon_logout.png';
+String iconNotification = 'assets/images/notification.png';
+String iconHelp = 'assets/images/help.png';
+String iconFaq = 'assets/images/faq.png';
+String iconPrivacy = 'assets/images/privacy.png';
+String iconApp = 'assets/images/app.png';
 
 //font
 String poppins = 'Poppins';
@@ -55,6 +66,33 @@ String viewTripDetails = 'View trip detail';
 //MyTrip Screen
 String myTrips = 'My Trips';
 String giveReview = 'Give Review';
+
+//Profile screen
+String myProfile = 'My Profile';
+String changePassword = 'Change password';
+String favorites = 'favorites';
+String myReview = 'My Review';
+String allOfferDeals = 'All offers & deals';
+String logOut = 'LOGOUT';
+String security = 'Security';
+String yourHandPicked = 'Your Handpicked';
+String allYourReview = 'All your given reviews';
+String myOffer = 'My Offer';
+String about = 'ABOUT';
+String edit = 'Edit';
+
+//Setting screen
+String setting = 'Setting';
+String getUpdate = 'Get Updated';
+String notification = 'Notification';
+String needHelp = 'Need Help';
+String help = 'Help';
+String faq = 'FAQ';
+String queAns = 'Question & Answer';
+String privacyPolicy = 'Privacy policy & Terms of use';
+String privacy = 'Privacy';
+String aboutApp = 'About App';
+String version = 'Version 1.1';
 
 //error message
 String errorEmail = 'Please enter email address';

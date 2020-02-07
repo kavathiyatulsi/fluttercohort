@@ -4,7 +4,7 @@ import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/utils/auth.dart';
 import 'package:flutter/material.dart';
-import '../../widget/raised_gradient_button.dart';
+import '../../widget/RaisedGradientButton.dart';
 import 'login_screen.dart';
 
 enum FormType { login, register }
