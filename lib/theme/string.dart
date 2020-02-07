@@ -13,6 +13,9 @@ String popularBg = 'assets/images/pupular_bg.png';
 String dubai = 'assets/images/dubai.png';
 String iconPlay = 'assets/images/icon_play.png';
 String brazil = 'assets/images/brazil.png';
+String hotel = 'assets/images/hotel.png';
+String iconArrowNext = 'assets/images/icon_arrow_next.png';
+String rowing = 'assets/images/rowing.png';
 
 //font
 String poppins = 'Poppins';
@@ -48,6 +51,10 @@ String monuments = 'Monuments in Florence';
 String quickJourney =
     'A quick Journey into florence\'s most importan monuments';
 String viewTripDetails = 'View trip detail';
+
+//MyTrip Screen
+String myTrips = 'My Trips';
+String giveReview = 'Give Review';
 
 //error message
 String errorEmail = 'Please enter email address';

@@ -34,3 +34,5 @@ ThemeData themeData = ThemeData(
             fontFamily: poppinsMedium,
             fontWeight: FontWeight.w600)));
 
+TextStyle textSize10= TextStyle(fontSize: 10.0,color: white,fontFamily: poppinsMedium);
+

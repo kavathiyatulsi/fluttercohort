@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cohort_app/screen/home/home_screen.dart';
+import 'package:cohort_app/screen/dashboard/dashboard_screen.dart';
 import 'package:cohort_app/screen/login/login_view.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,7 +53,7 @@ class Blocs extends Object with Validators implements BaseBloc {
           debugPrint('Login :-${onValue.user.email}');
           Navigator.pop(context);
           Navigator.of(context)
-              .pushReplacement(MaterialPageRoute(builder: (_) => HomeScreen()));
+              .pushReplacement(MaterialPageRoute(builder: (_) => DashBoardScreen()));
         }).catchError((onError) {
           switch (onError) {
             case "ERROR_WRONG_PASSWORD":
@@ -91,7 +91,7 @@ class Blocs extends Object with Validators implements BaseBloc {
             Navigator.pop(context);
             showToast(context, toastLoginSuccess);
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (_) => HomeScreen()));
+                MaterialPageRoute(builder: (_) => DashBoardScreen()));
           });
         }).catchError((onError) {
           Navigator.pop(context);
