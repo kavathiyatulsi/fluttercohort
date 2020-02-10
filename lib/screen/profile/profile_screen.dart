@@ -1,4 +1,5 @@
 import 'package:cohort_app/common/SizeBoxView.dart';
+import 'package:cohort_app/screen/favorites/favorites_screen.dart';
 import 'package:cohort_app/widget/Toolbar.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
@@ -30,18 +31,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     color: gray,
                   ),
                 ),
-                ProfileView(title: security, subTitle: changePassword, icon: iconPassword),
                 ProfileView(
-                    title: yourHandPicked,
-                    subTitle: favorites,
-                    icon: iconFavorites),
+                    title: security,
+                    subTitle: changePassword,
+                    icon: iconPassword),
+                ProfileView(
+                  title: yourHandPicked,
+                  subTitle: favorites,
+                  icon: iconFavorites,
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => FavoritesScreen())),
+                ),
                 ProfileView(
                     title: allYourReview,
                     subTitle: myReview,
                     icon: iconReviews),
                 ProfileView(
                     title: myOffer, subTitle: allOfferDeals, icon: iconOffers),
-                ProfileView(subTitle: logOut, icon: iconLogout, isLogin: true,),
+                ProfileView(
+                  subTitle: logOut,
+                  icon: iconLogout,
+                  isLogin: true,
+                ),
 
                 // profileWidget()
               ],

@@ -63,9 +63,8 @@ String quickJourney =
     'A quick Journey into florence\'s most importan monuments';
 String viewTripDetails = 'View trip detail';
 
-
 //Packages view  screen
-String packages ='Packages';
+String packages = 'Packages';
 
 //MyTrip Screen
 String myTrips = 'My Trips';
@@ -74,7 +73,7 @@ String giveReview = 'Give Review';
 //Profile screen
 String myProfile = 'My Profile';
 String changePassword = 'Change password';
-String favorites = 'favorites';
+String favorites = 'Favorites';
 String myReview = 'My Review';
 String allOfferDeals = 'All offers & deals';
 String logOut = 'LOGOUT';
@@ -118,11 +117,4 @@ String toastRegisterSuccess = 'Login successfully';
 //Constant key
 String ERROR_EMAIL_ALREADY_IN_USE = "ERROR_EMAIL_ALREADY_IN_USE";
 
-
-
-List<String> categoryList = [
-  'Popular',
-  'Discover',
-  'Domestic',
-  'Exploer'
-];
+List<String> categoryList = ['Popular', 'Discover', 'Domestic', 'Exploer'];
