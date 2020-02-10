@@ -3,7 +3,7 @@ import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:flutter/material.dart';
 
-import 'PackageView.dart';
+import 'CommonTextView.dart';
 
 class BudgetPackage extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _BudgetPackageState extends State<BudgetPackage> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 20.0),
       child: Column(
-        children: <Widget>[PackageView(budgetPackages),
+        children: <Widget>[CommonTextView(budgetPackages),
           sizeBox(15),
           popularPackageList()],
       ),

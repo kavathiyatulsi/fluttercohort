@@ -1,6 +1,6 @@
 import 'package:cohort_app/screen/home/widget/BestExperience.dart';
 import 'package:cohort_app/screen/home/widget/BudgetPackage.dart';
-import 'package:cohort_app/screen/home/widget/PackageView.dart';
+import 'package:cohort_app/screen/home/widget/CommonTextView.dart';
 import 'package:cohort_app/screen/home/widget/PopularPackage.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               topView(),
               PopularPackage(),
-              PackageView(bestExperience),
+              CommonTextView(bestExperience),
               BestExperience(),
               BudgetPackage()
             ],

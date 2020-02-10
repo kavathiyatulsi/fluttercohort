@@ -16,5 +16,10 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+extension WidgetPadding on Widget {
+  Widget paddingAll(double padding) =>
+      Padding(padding: EdgeInsets.all(padding), child: this);
+}
+
 
 

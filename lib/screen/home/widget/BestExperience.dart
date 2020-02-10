@@ -4,7 +4,7 @@ import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/widget/RaisedGradientButton.dart';
 import 'package:flutter/material.dart';
 
-import 'PackageView.dart';
+import 'CommonTextView.dart';
 
 class BestExperience extends StatefulWidget {
   @override

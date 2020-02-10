@@ -2,10 +2,10 @@ import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:flutter/material.dart';
 
-class PackageView extends StatelessWidget {
+class CommonTextView extends StatelessWidget {
   String title;
 
-  PackageView(this.title);
+  CommonTextView(this.title);
 
   @override
   Widget build(BuildContext context) {
