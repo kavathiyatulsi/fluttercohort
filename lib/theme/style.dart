@@ -42,4 +42,6 @@ TextStyle grayRegularSize10 = TextStyle(fontSize: 10.0, color: gray, fontFamily:
 TextStyle blackRegularSize10 = TextStyle(fontSize: 10.0, color: black, fontFamily: poppinsRegular);
 TextStyle whiteRegularSize10 = TextStyle(fontSize: 10.0, color: white, fontFamily: poppinsRegular);
 TextStyle blackMediumSize16 = TextStyle(fontSize: 16.0, color: black, fontFamily: poppinsMedium);
+TextStyle grayMediumSize12 = TextStyle(fontSize: 12.0, color: gray, fontFamily: poppinsMedium);
+TextStyle blackMediumSize12 = TextStyle(fontSize: 12.0, color: black, fontFamily: poppinsMedium);
 TextStyle blackSize12 = TextStyle(fontSize: 12.0, color: black, fontFamily: poppinsRegular);

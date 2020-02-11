@@ -1,5 +1,6 @@
 import 'package:cohort_app/common/SizeBoxView.dart';
 import 'package:cohort_app/screen/home/widget/CommonTextView.dart';
+import 'package:cohort_app/screen/thankyou/thank_you_screen.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:cohort_app/theme/style.dart';
@@ -155,6 +156,8 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
                 gradient:
                     LinearGradient(colors: <Color>[blue, blue, lightBlue]),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => ThankYouScreen())),
               ),
             )
           ],
@@ -358,19 +361,15 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   Widget getListOfInfo() {
-    return Padding(
-      padding: EdgeInsets.only(left: 18),
-      child: Container(
-          decoration: BoxDecoration(color: white),
-          child: ListView.builder(
-              primary: false,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) {
-                return getRow(index);
-              })),
-    );
+    return ListView.builder(
+        padding: padding,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return getRow(index);
+        });
   }
 
   Widget getRow(int index) {
@@ -434,4 +433,3 @@ class _DetailScreenState extends State<DetailScreen> {
 
   EdgeInsets padding = EdgeInsets.only(left: 18.0, top: 5, right: 18.0);
 }
-

@@ -29,6 +29,7 @@ String iconPrivacy = 'assets/images/privacy.png';
 String iconApp = 'assets/images/app.png';
 String burjBbg = 'assets/images/burj_bg.png';
 String favoriteSolid = 'assets/images/favorite_solid.png';
+String iconThankYou = 'assets/images/thank_you.png';
 
 //font
 String poppins = 'Poppins';
@@ -79,6 +80,10 @@ String whoGoing = 'Who\'s Going?';
 String inclusion = 'Inclusion';
 String exclusions = 'Exclusions';
 String continueBooking = 'Continue Booking';
+
+//Thank you  screen
+String thankYou = 'Thank you!';
+String viewDetails = 'View Details';
 
 //MyTrip Screen
 String myTrips = 'My Trips';
