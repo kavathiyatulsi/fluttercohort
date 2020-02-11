@@ -13,7 +13,7 @@ String popularBg = 'assets/images/pupular_bg.png';
 String dubai = 'assets/images/dubai.png';
 String iconPlay = 'assets/images/icon_play.png';
 String brazil = 'assets/images/brazil.png';
-String hotel = 'assets/images/hotel.png';
+String iconHotel = 'assets/images/hotel.png';
 String iconArrowNext = 'assets/images/icon_arrow_next.png';
 String rowing = 'assets/images/rowing.png';
 String profile = 'assets/images/olivia.jpg';
@@ -27,6 +27,8 @@ String iconHelp = 'assets/images/help.png';
 String iconFaq = 'assets/images/faq.png';
 String iconPrivacy = 'assets/images/privacy.png';
 String iconApp = 'assets/images/app.png';
+String burjBbg = 'assets/images/burj_bg.png';
+String favoriteSolid = 'assets/images/favorite_solid.png';
 
 //font
 String poppins = 'Poppins';
@@ -65,6 +67,18 @@ String viewTripDetails = 'View trip detail';
 
 //Packages view  screen
 String packages = 'Packages';
+
+//Details  screen
+String flight = 'Flight';
+String meals = 'Meals';
+String hotel = 'Hotel';
+String siteView = 'Site View';
+String transfer = 'Transfer';
+String overview = 'Overview';
+String whoGoing = 'Who\'s Going?';
+String inclusion = 'Inclusion';
+String exclusions = 'Exclusions';
+String continueBooking = 'Continue Booking';
 
 //MyTrip Screen
 String myTrips = 'My Trips';

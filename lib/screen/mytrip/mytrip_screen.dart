@@ -44,7 +44,7 @@ class _MyTripScreenState extends State<MyTripScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Expanded(
-                  child: Image.asset(index % 2 == 0 ? hotel : rowing),
+                  child: Image.asset(index % 2 == 0 ? iconHotel : rowing),
                   flex: 1,
                 ),
                 Expanded(
