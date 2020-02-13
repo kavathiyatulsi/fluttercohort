@@ -1,5 +1,9 @@
 import 'package:cohort_app/common/SizeBoxView.dart';
+import 'package:cohort_app/screen/changepassword/change_password_dialog.dart';
+import 'package:cohort_app/screen/editprofile/edit_profile_dialog.dart';
 import 'package:cohort_app/screen/favorites/favorites_screen.dart';
+import 'package:cohort_app/screen/myreview/my_review_screen.dart';
+import 'package:cohort_app/screen/offersdetails/offers_details_screen.dart';
 import 'package:cohort_app/widget/Toolbar.dart';
 import 'package:cohort_app/theme/color.dart';
 import 'package:cohort_app/theme/string.dart';
@@ -32,9 +36,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 ProfileView(
-                    title: security,
-                    subTitle: changePassword,
-                    icon: iconPassword),
+                  title: security,
+                  subTitle: changePassword,
+                  icon: iconPassword,
+                  onPressed: () => _openChangePasswordDialog(),
+                ),
                 ProfileView(
                   title: yourHandPicked,
                   subTitle: favorites,
@@ -43,11 +49,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       MaterialPageRoute(builder: (_) => FavoritesScreen())),
                 ),
                 ProfileView(
-                    title: allYourReview,
-                    subTitle: myReview,
-                    icon: iconReviews),
+                  title: allYourReview,
+                  subTitle: myReview,
+                  icon: iconReviews,
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => MyReviewScreen())),
+                ),
                 ProfileView(
-                    title: myOffer, subTitle: allOfferDeals, icon: iconOffers),
+                    title: myOffer,
+                    subTitle: allOfferDeals,
+                    icon: iconOffers,
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => OfferAndDetailsScreen()))),
                 ProfileView(
                   subTitle: logOut,
                   icon: iconLogout,
@@ -97,12 +112,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          Text(
-            edit,
-            style: TextStyle(fontSize: 10.0, color: blue),
+          GestureDetector(
+            onTap: () {
+              openEditDialog();
+            },
+            child: Text(
+              edit,
+              style: TextStyle(fontSize: 10.0, color: blue),
+            ),
           )
         ],
       ),
     );
+  }
+
+  void openEditDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) => EditProfileDialog());
+  }
+
+  _openChangePasswordDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) => ChangePasswordDialog());
+  }
+
+  _openAllOfferAndDetails() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) => ChangePasswordDialog());
+  }
+
+  void _openAddEntryDialog() {
+    Navigator.of(context).push(new MaterialPageRoute<Null>(
+        builder: (BuildContext context) {
+          return EditProfileDialog();
+        },
+        fullscreenDialog: false));
   }
 }

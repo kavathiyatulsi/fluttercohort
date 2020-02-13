@@ -11,7 +11,7 @@ class ProfileView extends StatefulWidget {
   String icon;
   bool isSwitchVisible = false;
   bool isLogin = false;
-   Function onPressed;
+  Function onPressed;
   ProfileView(
       {Key key,
       this.title,

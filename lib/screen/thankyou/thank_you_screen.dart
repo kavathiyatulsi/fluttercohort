@@ -30,13 +30,13 @@ class _ThankYouScreenState extends State<ThankYouScreen> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: test(),
+          child: thankYouView(),
         ),
       ),
     );
   }
 
-  Widget test() {
+  Widget thankYouView() {
   return  Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[

@@ -1,3 +1,4 @@
+import 'package:cohort_app/screen/addreview/add_review_screen.dart';
 import 'package:cohort_app/theme/style.dart';
 import 'package:cohort_app/widget/RaisedGradientButton.dart';
 import 'package:flutter/material.dart';
@@ -89,40 +90,46 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
   }
 
   Widget bookingIdView() {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-          color: blue,
-          borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => AddReviewScreen()));
+      },
+      child: Container(
+        margin: EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+            color: blue,
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+            gradient: LinearGradient(colors: <Color>[blue, blue, lightBlue])),
+        child: Padding(
+          padding: const EdgeInsets.only(right: 6, left: 6, top: 5, bottom: 5),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  'Booking ID:223232',
+                  style: textSize10,
+                ),
+              ),
+              Expanded(
+                flex: 0,
+                child: Text(
+                  'Give Review',
+                  style: textSize10,
+                ),
+              ),
+              Expanded(
+                flex: 0,
+                child: Image.asset(
+                  iconArrowNext,
+                  height: 12,
+                  width: 12,
+                ),
+              ),
+            ],
           ),
-          gradient: LinearGradient(colors: <Color>[blue, blue, lightBlue])),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 6, left: 6, top: 5, bottom: 5),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Text(
-                'Booking ID:223232',
-                style: textSize10,
-              ),
-            ),
-            Expanded(
-              flex: 0,
-              child: Text(
-                'Give Review',
-                style: textSize10,
-              ),
-            ),
-            Expanded(
-              flex: 0,
-              child: Image.asset(
-                iconArrowNext,
-                height: 12,
-                width: 12,
-              ),
-            ),
-          ],
         ),
       ),
     );
@@ -240,7 +247,7 @@ class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 image: new DecorationImage(
-                    image: AssetImage(dubai), fit: BoxFit.cover),
+                    image: AssetImage(googleMaps), fit: BoxFit.cover),
               )),
         ),
         Positioned(

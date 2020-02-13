@@ -30,7 +30,8 @@ String iconApp = 'assets/images/app.png';
 String burjBbg = 'assets/images/burj_bg.png';
 String favoriteSolid = 'assets/images/favorite_solid.png';
 String iconThankYou = 'assets/images/thank_you.png';
-String googleMap = 'assets/images/google_map.png';
+String googleMaps = 'assets/images/google_map.png';
+String exclusiveCard = 'assets/images/exclusive_card.png';
 
 //font
 String poppins = 'Poppins';
@@ -42,7 +43,7 @@ String poppinsMedium = 'Poppins-Medium.ttf';
 String register = 'Register';
 String login = 'Login';
 
-//Login ,register screen
+//Login ,register  edit profile screen
 String welcome = 'Welcome!';
 String singIn = 'Sign in to continue';
 String singUp = 'We\'re here for dreams';
@@ -54,6 +55,11 @@ String donHaveAccount = 'Don\'t have an account?';
 String alreadyAccount = 'Alrady have account?';
 String registerHere = ' Register here.';
 String loginHere = ' Login here.';
+String mobile = 'Mobile';
+String locationAddress = 'Location/Address';
+String basicInfo = 'Basic Info';
+String enterOldPassword = 'Enter Old Password';
+String setNewPassword = 'Set New Password';
 
 //Home screen
 String search = 'Search';
@@ -84,6 +90,25 @@ String continueBooking = 'Continue Booking';
 String bookingDetails = 'Booking Details';
 String callHotel = 'Call Hotel';
 String viewInGoogleMap = 'View in Google Maps';
+
+//Offer  screen
+String special = 'Special';
+String exclusive = 'Exclusive';
+
+//Add review screen
+String howDoYouLikeBooking = 'How do you like booking?';
+String remarksForUs = 'Remarks for us?';
+String giveUsRating =
+    'Give us rating star & write few  word for better suggestion';
+String submit = 'Submit';
+String writeFewWords = 'Write few words..';
+String everything = 'Everything';
+String staff = 'Staff';
+String service = 'Service';
+String communication = 'Communication';
+String loveIt = 'Love It';
+String save = 'Save';
+String update = 'Update';
 
 //Thank you  screen
 String thankYou = 'Thank you!';

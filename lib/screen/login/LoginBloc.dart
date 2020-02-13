@@ -1,13 +1,14 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cohort_app/screen/dashboard/dashboard_screen.dart';
-import 'package:cohort_app/screen/login/login_view.dart';
 import 'package:cohort_app/theme/string.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cohort_app/screen/login/LoginValidators.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:cohort_app/common/Toast.dart';
+
+import 'login_screen.dart';
 
 class Blocs extends Object with Validators implements BaseBloc {
   final _email = BehaviorSubject<String>();

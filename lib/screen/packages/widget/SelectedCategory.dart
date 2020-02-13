@@ -32,7 +32,7 @@ class _SelectedCategoryState extends State<SelectedCategory>
     return Column(
       children: <Widget>[
         Container(
-          height: 60.0,
+          height: 70.0,
           color: white,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -62,10 +62,13 @@ class _SelectedCategoryState extends State<SelectedCategory>
               gradient:
                   index == selectedIndex ? buttonGradient : buttonGradientWhite,
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
-          child: Text(
-            categoryList[index],
-            style: TextStyle(
-                fontSize: 14.0, color: index == selectedIndex ? white : black),
+          child: Center(
+            child: Text(
+              categoryList[index],
+              style: TextStyle(
+                  fontSize: 14.0,
+                  color: index == selectedIndex ? white : black),
+            ),
           ),
         ),
       ),
