@@ -30,6 +30,7 @@ String iconApp = 'assets/images/app.png';
 String burjBbg = 'assets/images/burj_bg.png';
 String favoriteSolid = 'assets/images/favorite_solid.png';
 String iconThankYou = 'assets/images/thank_you.png';
+String googleMap = 'assets/images/google_map.png';
 
 //font
 String poppins = 'Poppins';
@@ -80,6 +81,9 @@ String whoGoing = 'Who\'s Going?';
 String inclusion = 'Inclusion';
 String exclusions = 'Exclusions';
 String continueBooking = 'Continue Booking';
+String bookingDetails = 'Booking Details';
+String callHotel = 'Call Hotel';
+String viewInGoogleMap = 'View in Google Maps';
 
 //Thank you  screen
 String thankYou = 'Thank you!';
